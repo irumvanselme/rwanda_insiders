@@ -14,8 +14,12 @@ class CreateLocationAddressesTable extends Migration
     public function up()
     {
         Schema::create('location_addresses', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id("location_id");
+            $table->enum("location_type", ["PROVINCE", "DISTRICT", "SECTOR", "VILLAGE", "CELL", "COUNTRY"]);
+            $table->string("name");
+            $table->string("name_french");
+            $table->string("name_kiny");
+            $table->string("parent_id")->nullable();
         });
     }
 
