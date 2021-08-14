@@ -1,11 +1,10 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Models;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
-class PagesController extends Controller
+class Page
 {
     static function allPages(): Collection
     {
