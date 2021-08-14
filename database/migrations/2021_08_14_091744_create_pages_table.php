@@ -15,6 +15,10 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
+            $table->string("title");
+            $table->enum("type", ["STAND_ALONE", "LOCATION_BASED"])->default("STAND_ALONE");
+            $table->string("path");
+            $table->enum("status", ["DRAFT", "PUBLISHED", "REJECTED"])->default("DRAFT");
             $table->timestamps();
         });
     }
