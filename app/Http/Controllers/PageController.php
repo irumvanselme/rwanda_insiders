@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Page;
+use App\Http\Classes\Page;
 use Illuminate\Mail\Markdown;
 
 class PageController extends Controller
