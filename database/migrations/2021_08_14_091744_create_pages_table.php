@@ -15,6 +15,7 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("user_id");
             $table->string("title");
             $table->enum("type", ["STAND_ALONE", "LOCATION_BASED"])->default("STAND_ALONE");
             $table->string("path");
