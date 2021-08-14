@@ -3,6 +3,7 @@ namespace App\Http\Classes;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class Page
 {
@@ -17,7 +18,8 @@ class Page
             });
     }
 
-    static function getContent($pageName){
-        return file_get_contents(app_path("Pages/Posts/".$pageName));
+    static function getContent($pageName): string
+    {
+        return Storage::get("Pages/Posts/".$pageName);
     }
 }
